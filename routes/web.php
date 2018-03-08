@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// redirect all path to front-end
+
+//Route::get('/{path?}', function($path = null){
+//    return view('welcome');
+//})->where('path', '.*');
