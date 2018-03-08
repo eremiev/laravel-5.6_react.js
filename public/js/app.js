@@ -1569,10 +1569,9 @@ var FETCH_POST = 'fetch_post';
 var DELETE_POST = 'delete_post';
 var CREATE_POST = 'create_post';
 
-var ROOT_URL = 'http://homestead.app/api';
+var ROOT_URL = 'http://' + window.location.hostname + '/api';
 
 function fetchPosts() {
-
     var request = __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get(ROOT_URL + '/posts');
 
     return {

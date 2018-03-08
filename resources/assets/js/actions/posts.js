@@ -5,10 +5,9 @@ export const FETCH_POST = 'fetch_post';
 export const DELETE_POST = 'delete_post';
 export const CREATE_POST = 'create_post';
 
-const ROOT_URL = 'http://homestead.app/api';
+const ROOT_URL = 'http://' + window.location.hostname + '/api';
 
 export function fetchPosts() {
-
     const request = axios.get(`${ROOT_URL}/posts`);
 
     return {
