@@ -20,9 +20,9 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import PostsList from './components/PostsList';
-import PostsShow from './components/PostsShow';
-import PostsCreate from './components/PostsCreate';
+import PostsList from './containers/PostsList';
+import PostsShow from './containers/PostsShow';
+import PostsCreate from './containers/PostsCreate';
 
 import reducers from './reducers';
 
