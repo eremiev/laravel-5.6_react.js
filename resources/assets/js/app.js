@@ -20,8 +20,9 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import Master from './components/Master';
-import CreatePost from './components/CreatePost';
+import PostsList from './components/PostsList';
+import PostsShow from './components/PostsShow';
+import PostsCreate from './components/PostsCreate';
 
 import reducers from './reducers';
 
@@ -34,8 +35,9 @@ if (document.getElementById('app')) {
             <BrowserRouter>
                 <div>
                     <Switch>
-                        <Route path="/posts/new" component={CreatePost}/>
-                        <Route path="/" component={Master}/>
+                        <Route path="/posts/new" component={PostsCreate}/>
+                        <Route path="/posts/:id" component={PostsShow}/>
+                        <Route path="/" component={PostsList}/>
                     </Switch>
                 </div>
             </BrowserRouter>
