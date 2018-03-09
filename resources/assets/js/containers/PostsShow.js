@@ -18,6 +18,11 @@ class PostsShow extends Component {
         });
     }
 
+    onUpdateClick() {
+        const {id} = this.props.match.params;
+        this.props.history.push(`/posts/${id}/edit`);
+    }
+
     render() {
         const {post} = this.props;
 
@@ -30,6 +35,9 @@ class PostsShow extends Component {
                 <Link to="/">Back To Index</Link>
                 <button className="btn btn-danger pull-xs-right" onClick={this.onDeleteClick.bind(this)}>
                     Delete Post
+                </button>
+                <button className="btn btn-primary pull-xs-right" onClick={this.onUpdateClick.bind(this)}>
+                    Update Post
                 </button>
                 <h3>{post.title}</h3>
                 <p>{post.description}</p>

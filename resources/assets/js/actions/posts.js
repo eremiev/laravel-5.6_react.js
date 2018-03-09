@@ -4,6 +4,7 @@ export const FETCH_POSTS = 'fetch_posts';
 export const FETCH_POST = 'fetch_post';
 export const DELETE_POST = 'delete_post';
 export const CREATE_POST = 'create_post';
+export const UPDATE_POST = 'update_post';
 
 const ROOT_URL = 'http://' + window.location.hostname + '/api';
 
@@ -23,6 +24,17 @@ export function createPost(values, callback) {
 
     return {
         type: CREATE_POST,
+        payload: request
+    };
+}
+
+export function updatePost(id, values, callback) {
+
+    const request = axios.put(`${ROOT_URL}/posts/${id}`, values)
+        .then(() => callback());
+
+    return {
+        type: UPDATE_POST,
         payload: request
     };
 }
