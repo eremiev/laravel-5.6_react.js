@@ -24,6 +24,7 @@ import PostsList from './containers/PostsList';
 import PostsShow from './containers/PostsShow';
 import PostsUpdate from './containers/PostsUpdate';
 import PostsCreate from './containers/PostsCreate';
+import NotFoundComponent from './components/NotFound';
 
 import reducers from './reducers';
 
@@ -39,7 +40,8 @@ if (document.getElementById('app')) {
                         <Route path="/posts/new" component={PostsCreate}/>
                         <Route path="/posts/:id/edit" component={PostsUpdate}/>
                         <Route path="/posts/:id" component={PostsShow}/>
-                        <Route path="/" component={PostsList}/>
+                        <Route path="/" exact component={PostsList}/>
+                        <Route component={NotFoundComponent} />
                     </Switch>
                 </div>
             </BrowserRouter>

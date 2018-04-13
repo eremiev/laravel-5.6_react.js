@@ -15,7 +15,8 @@ export default function (state = {}, action) {
             return _.mapKeys(action.payload.data, 'id');
 
         case UPDATE_POST:
-            return {...state, [action.payload.data.id]: action.payload.data};
+            if (action.payload)
+                return {...state, [action.payload.data.id]: action.payload.data};
 
 
         default:
