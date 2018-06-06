@@ -26,6 +26,14 @@ import PostsUpdate from './containers/PostsUpdate';
 import PostsCreate from './containers/PostsCreate';
 import NotFoundComponent from './components/NotFound';
 
+
+import Index from './components/index'
+import Login from './components/login'
+import Register from './components/register'
+import Home from './components/home'
+import Forgot from './components/forgot'
+import Reset from './components/reset'
+
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
@@ -37,10 +45,17 @@ if (document.getElementById('app')) {
             <BrowserRouter>
                 <div>
                     <Switch>
+                        {/*login*/}
+                        <Route path='/login' component={Login}/>
+                        <Route path='/register' component={Register}/>
+                        <Route path='/home' component={Home}/>
+                        <Route path='/forgotpassword' component={Forgot}/>
+                        <Route path='/password/reset/:token' component={Reset}/>
+
                         <Route path="/posts/new" component={PostsCreate}/>
                         <Route path="/posts/:id/edit" component={PostsUpdate}/>
                         <Route path="/posts/:id" component={PostsShow}/>
-                        <Route path="/" exact component={PostsList}/>
+                        <Route path="/" exact component={Index}/>
                         <Route component={NotFoundComponent} />
                     </Switch>
                 </div>

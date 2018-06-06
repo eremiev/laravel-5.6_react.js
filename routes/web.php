@@ -11,12 +11,19 @@
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
 // redirect all path to front-end
 
 Route::get('/{path?}', function($path = null){
-    return view('welcome');
+    return view('index');
 })->where('path', '.*');
+
+//other way to redirect
+
+//Route::get('{slug}', function() {
+//    return view('index');
+//})
+//    ->where('slug', '(?!api)([A-z\d-\/_.]+)?');
+
+
+Auth::routes();
+
